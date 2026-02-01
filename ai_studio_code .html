@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wang Lab | 汪一波实验室</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; color: #333; overflow-x: hidden; }
+        .academic-red { color: #800000; }
+        .bg-academic-red { background-color: #800000; }
+        .nav-link { cursor: pointer; padding: 0.5rem 0.2rem; transition: all 0.3s; border-bottom: 2px solid transparent; }
+        .nav-link:hover { color: #800000; }
+        .nav-link.active { color: #800000; border-bottom: 2px solid #800000; font-weight: bold; }
+        .page-section { display: none; min-height: 75vh; animation: fadeIn 0.4s ease-in-out; }
+        .page-section.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section-title { border-bottom: 2px solid #eee; margin-bottom: 2rem; padding-bottom: 0.5rem; font-weight: 700; color: #111; }
+        .content-p { line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tight academic-red">WANG LAB @ FUWAI</div>
+            <div class="hidden md:flex space-x-6 font-medium text-sm">
+                <span onclick="showSection('home', this)" class="nav-link active">首页</span>
+                <span onclick="showSection('pi', this)" class="nav-link">PI简介</span>
+                <span onclick="showSection('research', this)" class="nav-link">研究方向</span>
+                <span onclick="showSection('team', this)" class="nav-link">团队成员</span>
+                <span onclick="showSection('publications', this)" class="nav-link">成果发表</span>
+                <span onclick="showSection('honors', this)" class="nav-link">荣誉奖项</span>
+                <span onclick="showSection('alumni', this)" class="nav-link">毕业生去向</span>
+                <span onclick="showSection('contact', this)" class="nav-link">联系我们</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 py-12">
+
+        <!-- 1. 新首页板块 -->
+        <section id="home" class="page-section active">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">关于我们 <span class="text-gray-300 ml-2">About Us</span></h2>
+                    <p class="content-p text-lg">
+                        欢迎来到中国医学科学院阜外医院<b>汪一波实验室</b>！我们聚焦于心血管病遗传致病机制，系统性发展了心血管病体细胞遗传学。
+                    </p>
+                    <p class="content-p text-gray-600">
+                        我们非常重视每一位学生的身心健康和学业成长。实验室拥有严谨而自由的学术氛围，每一位博士生在培养期间都有丰富的科研成果，目前在读及毕业博士生均发表了至少一篇 <b>IF > 10分</b> 的高质量学术文章。
+                    </p>
+                    <p class="content-p font-semibold academic-red">
+                        欢迎生物学、临床医学、生物信息学等专业的优秀同学加入我们，共同探索心血管生命的奥秘！
+                    </p>
+                </div>
+                <div>
+                    <!-- 这里请确保上传图片并命名为 cover.jpg -->
+                    <img src="cover.jpg" alt="Scientific Illustration" class="rounded-2xl shadow-2xl w-full border border-gray-100">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. PI 简介板块 (由原首页修改而来) -->
+        <section id="pi" class="page-section">
+            <div class="flex flex-col md:flex-row items-start gap-12">
+                <div class="w-full md:w-1/3">
+                    <!-- 请确保上传图片并命名为 pi-photo.jpg -->
+                    <img src="pi-photo.jpg" alt="汪一波教授" class="rounded-lg shadow-xl w-full object-cover border">
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h1 class="text-4xl font-bold mb-2">汪一波 <span class="text-2xl font-normal text-gray-500 ml-2">Yibo Wang, Ph.D.</span></h1>
+                    <p class="text-lg academic-red font-semibold mb-6">研究员，博士生导师 | 国家优青 | 国家青A</p>
+                    <div class="space-y-4 text-gray-700 leading-relaxed text-justify">
+                        <p>北京协和医学院准聘副教授，再生医学重点实验室课题组长。主持科技部国家重点研发计划（任务）、国家自然科学基金、北京市科技新星计划等。获教育部自然科学一等奖、中华医学科技二等奖、北京市科技进步二等奖等多项荣誉。</p>
+                        <p><b>学术兼职：</b>中国分子心脏病学杂志副主编，Brain & Heart 编委，Nature Reviews Cardiology 中文版编委。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 研究方向 -->
+        <section id="research" class="page-section">
+            <h2 class="text-2xl section-title">研究方向 <span class="text-sm font-normal text-gray-400 ml-2">RESEARCH</span></h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-8 bg-gray-50 rounded-2xl border-t-4 border-academic-red">
+                    <h4 class="text-lg font-bold mb-3">心血管病体细胞遗传学</h4>
+                    <p class="text-gray-600 leading-relaxed italic">Somatic Genetics in Cardiovascular Diseases</p>
+                </div>
+                <div class="p-8 bg-gray-50 rounded-2xl border-t-4 border-academic-red">
+                    <h4 class="text-lg font-bold mb-3">再生医学与遗传机制</h4>
+                    <p class="text-gray-600 leading-relaxed italic">Regenerative Medicine & Genetic Mechanisms</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 团队成员 -->
+        <section id="team" class="page-section">
+            <h2 class="text-2xl section-title">团队成员 <span class="text-sm font-normal text-gray-400 ml-2">MEMBERS</span></h2>
+            <div class="space-y-12">
+                <div>
+                    <h3 class="text-lg font-bold mb-6 border-l-4 border-academic-red pl-3">技术人员 & 博士后</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+                        <div class="bg-gray-50 p-4 rounded text-center"><p class="font-bold">张宇</p><p class="text-gray-500">技术员</p></div>
+                        <div class="bg-gray-50 p-4 rounded text-center"><p class="font-bold">张诗雨</p><p class="text-gray-500">技术员</p></div>
+                        <div class="bg-gray-50 p-4 rounded text-center"><p class="font-bold">李南南</p><p class="text-gray-500">博士后</p></div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6 border-l-4 border-academic-red pl-3">在读博士生</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-gray-100 p-3 text-center rounded">李若飞</div><div class="bg-gray-100 p-3 text-center rounded">吕城</div>
+                        <div class="bg-gray-100 p-3 text-center rounded">夏依旦</div><div class="bg-gray-100 p-3 text-center rounded">胡鹏燕</div>
+                        <div class="bg-gray-100 p-3 text-center rounded">丁玉勤</div><div class="bg-gray-100 p-3 text-center rounded">魏晓艺</div>
+                        <div class="bg-gray-100 p-3 text-center rounded">倪文婧</div><div class="bg-gray-100 p-3 text-center rounded">刘昌君</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 成果发表 -->
+        <section id="publications" class="page-section">
+            <h2 class="text-2xl section-title">成果发表 <span class="text-sm font-normal text-gray-400 ml-2">PUBLICATIONS</span></h2>
+            <div class="space-y-4">
+                <div class="p-4 border-l-4 border-gray-200 hover:border-academic-red transition-all">
+                    <p class="font-bold text-lg">Circulation <span class="font-normal text-sm text-gray-500 ml-2">(IF > 30)</span></p>
+                    <p class="text-gray-600 italic">With Editorial Comment</p>
+                </div>
+                <div class="p-4 border-l-4 border-gray-200 hover:border-academic-red transition-all">
+                    <p class="font-bold text-lg">Nature Aging</p>
+                </div>
+                <div class="p-4 border-l-4 border-gray-200 hover:border-academic-red transition-all">
+                    <p class="font-bold text-lg">JACC / Circulation Research / Nature Communications / Brain / EMBO J</p>
+                    <p class="text-sm text-gray-500 mt-2">团队成员在以上高水平期刊发表多篇封面文章及述评文章。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 荣誉奖项 -->
+        <section id="honors" class="page-section">
+            <h2 class="text-2xl section-title">荣誉奖项 <span class="text-sm font-normal text-gray-400 ml-2">HONORS</span></h2>
+            <div class="grid gap-4">
+                <div class="flex items-center gap-6 p-6 bg-red-50 rounded-xl border-l-4 border-academic-red">
+                    <i class="fa-solid fa-medal text-academic-red text-2xl"></i>
+                    <div><p class="font-bold">李若飞</p><p class="text-gray-600">2024 & 2025 蝉联博士生国家奖学金</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. 毕业生去向 -->
+        <section id="alumni" class="page-section">
+            <h2 class="text-2xl section-title">毕业生去向 <span class="text-sm font-normal text-gray-400 ml-2">ALUMNI</span></h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <tr class="bg-gray-50 border-b">
+                        <th class="p-4">届次</th><th class="p-4">姓名</th><th class="p-4">毕业去向</th>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">2025 届</td><td class="p-4 font-bold">虞亮 (博士)</td><td class="p-4 italic text-academic-red">北京大学第三医院 · 博士后</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- 8. 联系我们 -->
+        <section id="contact" class="page-section">
+            <h2 class="text-2xl section-title">联系我们 <span class="text-sm font-normal text-gray-400 ml-2">CONTACT</span></h2>
+            <div class="bg-gray-50 p-8 rounded-2xl">
+                <p class="mb-4"><i class="fa-solid fa-map-location-dot academic-red mr-2"></i> 北京市西城区北礼士路167号 阜外医院再生医学重点实验室</p>
+                <p><i class="fa-solid fa-envelope academic-red mr-2"></i> 汪一波 邮箱: yibowang@fuwai.edu.cn</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-zinc-900 text-gray-500 py-8 text-center text-xs">
+        <p>&copy; 2025 Wang Lab | Fuwai Hospital | Peking Union Medical College</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId, element) {
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            element.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
